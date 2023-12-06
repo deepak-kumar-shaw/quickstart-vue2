@@ -12,9 +12,7 @@
       :allowFiltering="true"
       :value="selectedIds"
       @update:value="selectHandler"
-      itemTemplate='<div class="flex-y-center">
-      <v-btn class="pr-4">edit</v-btn>  ${data}
-        </div>'
+      :itemTemplate="iTemplate"
     >
       <!-- <template v-slot:itemTemplate="{ data }">
         <div class="flex-y-center">
@@ -30,6 +28,7 @@
   </div>
 </template>
 <script>
+import Vue from "vue";
 import { DropDownTreeComponent } from "@syncfusion/ej2-vue-dropdowns";
 
 export default {
@@ -111,17 +110,17 @@ export default {
   data() {
     return {
       isHierarchicalData: true,
-      // iTemplate: function () {
-      //   return {
-      //     template: Vue.component("itemTemplate", {
-      //       template:
-      //         '<div class="flex-y-center"> <v-btn>edit</v-btn> <div class="text-ellipsis">{{data.label}}</div> </div>',
-      //       data() {
-      //         return { data: {} };
-      //       },
-      //     }),
-      //   };
-      // },
+      iTemplate: function () {
+        return {
+          template: Vue.component("itemTemplate", {
+            template:
+              `<div class="flex-y-center"> <v-btn>edit</v-btn> <div class="text-ellipsis"> deepak </div> </div>`,
+            data() {
+              return { data: {} };
+            },
+          }),
+        };
+      },
     };
   },
   methods: {

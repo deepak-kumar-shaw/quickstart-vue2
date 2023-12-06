@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <v-btn class="pr-4">edit</v-btn>
-    <v-icon>edit </v-icon>
-    <gid-dropdown-tree :items="itemsTree" class="pt-6"> </gid-dropdown-tree>
+    <v-app>
+      <v-btn class="pr-4">edit</v-btn>
+      <v-icon>edit </v-icon>
+      <gid-dropdown-tree :items="itemsTree" class="pt-6"> </gid-dropdown-tree>
+    </v-app>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
