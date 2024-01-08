@@ -1,5 +1,6 @@
 <template>
   <div>
+    <ckBox label="BtnInCom"></ckBox>
     <ejs-dropdowntree
       :id="id"
       ref="ejsddt"
@@ -30,11 +31,13 @@
 <script>
 import Vue from "vue";
 import { DropDownTreeComponent } from "@syncfusion/ej2-vue-dropdowns";
+import ckBox from "./ck-box.vue";
 
 export default {
   name: "GidDropdownTree",
   components: {
     "ejs-dropdowntree": DropDownTreeComponent,
+    ckBox,
   },
   props: {
     id: { type: String, default: "gid-dropdown-tree" },
@@ -113,8 +116,7 @@ export default {
       iTemplate: function () {
         return {
           template: Vue.component("itemTemplate", {
-            template:
-              `<div class="flex-y-center"> <v-btn>edit</v-btn> <div class="text-ellipsis"> deepak </div> </div>`,
+            template: `<ckBox></ckBox>`,
             data() {
               return { data: {} };
             },
